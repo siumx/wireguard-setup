@@ -338,12 +338,20 @@ restart_services() {
 show_result() {
     echo ""
     echo -e "${GREEN}WireGuard 配置完成！${NC}"
-    echo "Client 配置輸出於：$CLIENT_DIR"
+    echo ""
+    echo "Client 配置檔案："
 
     for client_name in "${CLIENT_NAMES[@]}"; do
-        echo "  - $client_name.conf"
+        echo "  $CLIENT_DIR/$client_name.conf"
     done
 
+    echo ""
+    echo -e "${BLUE}下一步：${NC}"
+    echo "1. 在各 Client 下載屬於自己的 .conf 檔案。"
+    echo "2. 開啟 Client 端的 WireGuard 軟件。"
+    echo "3. 選擇「Import tunnel(s) from file」，匯入對應的 .conf 檔案。"
+    echo "4. 每台 Client 必須使用各自的配置，不要共用同一個 .conf。"
+    echo ""
     show_warning "請確認雲端 Security Group 已允許 UDP $WG_PORT"
 }
 
