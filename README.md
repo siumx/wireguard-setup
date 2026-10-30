@@ -1,8 +1,8 @@
 # WireGuard setup
 
-Ubuntu 上一鍵安裝 WireGuard Server，並為每台裝置產出獨立的 Client `.conf`。VPN IPv4 固定使用 `/24`。Client 走全隧道（IPv4 + IPv6），Server 端用 iptables NAT 出網；內部 IPv6 只存在於 tunnel，並擋掉轉發，避免 Client 的原生 IPv6 繞過 VPN。
+Ubuntu 上一鍵安裝 WireGuard Server，直接為每台裝置產出獨立的 Client `.conf`。
 
-適用：Debian／Ubuntu、root（`sudo`）。倉庫裡只有一支腳本。
+適用：Debian／Ubuntu、root（`sudo`）。
 
 ## Deploy
 
